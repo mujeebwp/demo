@@ -18,20 +18,29 @@ export default function blog() {
   }, [])
 
   return (
-    <div>
-      <h1> Welcome to My blog gallery ssg</h1>
-      <div>
+    <>
+      <div className='inline-block '>
       {
         state.map((e) => (
-            <a key={e.id}>
-            <h2> {e.title} &rarr;</h2>
-            <img src={e.image} width={250} height={200}/>
-            <p>{e.description}</p>
-            <h3>${e.price}</h3>
+
+
+ 
+ <div className="lg:w-1/4 md:w-1/2 p-2 m-1 w-full inline-block bg-indigo-950 align-top rounded-2xl">
+        <a className="block relative h-48 rounded overflow-hidden">
+          <img alt="ecommerce" className="object-cover object-center w-full h-full block" src={e.image}/>
         </a>
-        ))
-        }
-      </div>    
-    </div>
-  )
-}
+        <div className="mt-4">
+          <h2 className="text-gray-900 title-font text-lg font-medium">{e.title}</h2>
+          <p className="mt-1">${e.price}</p>
+          <p>{e.description}</p>
+        </div>
+      
+
+  </div>
+
+))}
+
+
+</div>
+
+   </> )}
